@@ -1,4 +1,4 @@
-# <h1 style="color:#314455">News App</h1>
+# News App
 
 ![alt text](https://img.icons8.com/cotton/100/000000/owl.png "Logo Title Text 1")
 
