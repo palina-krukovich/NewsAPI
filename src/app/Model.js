@@ -43,7 +43,7 @@ export default class Model extends EventEmitter{
             this.load = String('search');
             this.q = String(q);
             this.page = 1;
-            this.newsAPI.searchEverything(this.q);
+            this.newsAPI.searchEverything(this.page, this.q);
             this.page++;
         } else {
             this.loadTopHeadlines();

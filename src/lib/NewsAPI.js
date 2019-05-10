@@ -19,29 +19,19 @@ export default class NewsAPI extends EventEmitter{
     }
 
     loadTopHeadlines(page) {
-        let url = this.startURL + this.topHeadlines +
-            'country=gb&' +
-            'pageSize=5&' +
-            'page=' + page + '&' +
-            this.apiKeyURL;
+        const url = `${this.startURL}${this.topHeadlines}country=gb&pageSize=5&page=${page}&${this.apiKeyURL}`;
         let req = new Request(url);
         return fetch(req).then(response => response.json()).then(data => this.emit('loadTopHeadlinesComplete', data));
     }
 
     loadEverythingFromSource(page, sourceID) {
-        let url = this.startURL + this.everything +
-            'pageSize=5&' +
-            'page=' + page + '&' +
-            'sources=' + sourceID + '&' +
-            this.apiKeyURL;
+        const url = `${this.startURL}${this.everything}pageSize=5&page=${page}&sources=${sourceID}&${this.apiKeyURL}`;
         let req = new Request(url);
         return fetch(req).then(response => response.json()).then(data => this.emit('loadEverythingFromSourceComplete', data));
     }
 
-    searchEverything(q) {
-        let url = this.startURL + this.everything +
-        'q="' + q + '"&' +
-        this.apiKeyURL;
+    searchEverything(page, q) {
+        const url = `${this.startURL}${this.everything}q=${q}&pageSize=5&page=${page}&${this.apiKeyURL}`;
         let req = new Request(url);
         return fetch(req).then(response => response.json()).then(data => this.emit('searchEverythingComplete', data));
     }

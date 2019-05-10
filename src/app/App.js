@@ -1,8 +1,8 @@
-import Controler from './Controller';
+import Controller from './Controller';
 
 export default class App {
     constructor() {
-        this.controller = new Controler();
+        this.controller = new Controller();
     }
 
     run() {

@@ -36,6 +36,7 @@ export default class View extends EventEmitter{
             document.querySelector('.conn-failed-message').style.display = 'none';
             let template = document.querySelector('#nav-button-template');
             let container = document.querySelector('.nav');
+            let fragment = document.createDocumentFragment(); // document fragment
             for (let i = 0; i < data.sources.length; i++) {
                 let clone = template.content.cloneNode(true).querySelector('.nav__item');
                 clone.id = data.sources[i].id;
@@ -44,8 +45,9 @@ export default class View extends EventEmitter{
                     e.preventDefault();
                     this.emit('srcBtnClick', clone.id);
                 });
-                container.appendChild(clone);
+                fragment.appendChild(clone);
             }
+            container.appendChild(fragment);
         } else {
             document.querySelector('.conn-failed-message').style.display = 'block';
             document.querySelector('.main__button_load-more').style.display = 'none';
@@ -58,6 +60,7 @@ export default class View extends EventEmitter{
             let template = document.querySelector('#article-template');
             let container = document.querySelector('.main__content');
             container.innerHTML = '';
+            let fragment = document.createDocumentFragment(); // document fragment
             for (let i = 0; i < data.articles.length; i++) {
                 let clone = template.content.cloneNode(true).querySelector('.main__article');
                 if (data.articles[i].urlToImage) {
@@ -71,8 +74,9 @@ export default class View extends EventEmitter{
                 clone.querySelector('.main__article_source').innerHTML = data.articles[i].source.name;
                 clone.querySelector('.main__article_description').innerHTML = data.articles[i].description;
                 clone.querySelector('.main__article_url').setAttribute('href', data.articles[i].url);
-                container.appendChild(clone);
+                fragment.appendChild(clone);
             }
+            container.appendChild(fragment);
 
             if (!data.articles.length) {
                 document.querySelector('.no-results-message').style.display = 'block';
