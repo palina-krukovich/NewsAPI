@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="icon" type="images/png" href="https://img.icons8.com/cotton/100/000000/owl.png">
+    <title>News</title>
+<link href="app.bundle.css" rel="stylesheet"></head>
+<body>
+    <div class="flow-1 flow"></div>
+    <div class="flow-2 flow"></div>
+    <div class="flow-3 flow"></div>
+
+    <header class="header">
+        <div class="header__title__box">
+            <img class="header__logo" src="https://img.icons8.com/cotton/100/000000/owl.png">
+            <h1 class="header__title">News</h1>
+        </div>
+        <div class="header__search__box">
+            <input class="header__search" type="text" name="search" placeholder="Search">
+            <button class="header__search_submit" type="submit" name="submit"><i class="fas fa-search"></i></button>
+        </div>
+    </header>
+
+    <nav class="nav">
+
+    </nav>
+
+    <main class="main">
+        <h2 class="no-results-message message">There are no articles matching your request</h2>
+        <h2 class="conn-failed-message message">Connection failed :(</h2>
+        <section class="main__content">
+
+        </section>
+        <button class="main__button_load-more" name="load_more" type="submit">Load More</button>
+    </main>
+
+    <footer class="footer">
+        © Copyright
+        <a href="https://newsapi.org/"> NewsAPI</a>
+        <a href="https://icons8.com/icon/54035/owl">Owl icon by Icons8</a>
+    </footer>
+
+    <template id="nav-button-template">
+        <button class="nav__item" name="source" type="submit"></button>
+    </template>
+
+    <template id="article-template">
+        <article class="main__article">
+            <figure class="main__article__figure">
+                <i class="fas fa-camera-retro main__article_icon"></i>
+            </figure>
+            <div class="main__article__content">
+                <div class="main__article__content__header">
+                    <p class="main__article_author"></p>
+                    <p class="main__article_date"></p>
+                </div>
+                <h2 class="main__article_title"></h2>
+                <h3 class="main__article_source"></h3>
+                <p class="main__article_description">
+
+                </p>
+                <a class="main__article_url" href="#">Read more...</a>
+            </div>
+        </article>
+    </template>
+
+
+<script type="text/javascript" src="app.bundle.js"></script></body>
+</html>
