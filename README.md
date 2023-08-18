@@ -11,4 +11,4 @@
 
 ***
 
-*Visit my News Website* [here](https://polina-krukovich.github.io/NewsAPI/) 
+*Visit my News Website* [here](https://palina-krukovich.github.io/NewsAPI/) 
